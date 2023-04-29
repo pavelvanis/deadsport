@@ -1,29 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import Layout from "./Layout";
-import NotFound from "./Components/Body/NotFound";
-import Home from "./components/body/Results";
-
+import { Results, News, NotFound } from "./components/body";
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
         path: "/",
-        element: <Layout />,
-        children: [
-            {
-                path: "/",
-                element: <Home />
-            },
-            {
-                path: "*",
-                element: <NotFound />
-            },
-            /* {
-                path: "chat",
-                element: <ChatLayout />
-            }, */
-        ]
-    }
-])
+        element: <Results />,
+      },
+      {
+        path: "news",
+        element: <News />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      }
+    ]
+  }
+]);
 
 export default router;

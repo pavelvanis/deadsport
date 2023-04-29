@@ -7,14 +7,23 @@ import {
   Form,
   Button,
 } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "../../public/deadsport.svg";
 
 export default function Header() {
   return (
     <header>
-      <Navbar bg="light" expand="md" className="mb-3 px-5 py-4">
+      <Navbar bg="light" expand="md" className="px-5 py-4">
         <Container fluid>
-          <Navbar.Brand href="/">DEADSPORT</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img
+              alt=""
+              src={logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top me-2"
+            />{" "}
+            DEADSPORT
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
@@ -28,8 +37,12 @@ export default function Header() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-center flex-grow-1 pe-3">
-                <Nav.Link href="#action1" className="text-uppercase">Results</Nav.Link>
-                <Nav.Link href="#action2" className="text-uppercase">News</Nav.Link>
+                <Nav.Link href="#action1" className="text-uppercase">
+                  Results
+                </Nav.Link>
+                <Nav.Link href="#action2" className="text-uppercase">
+                  News
+                </Nav.Link>
               </Nav>
               <Form className="d-flex">
                 <Form.Control
